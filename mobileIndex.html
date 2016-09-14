@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <title>谁是卡券王</title>
+	<meta name="keywords" content="微乐,weile,welove,精确营销，精准营销，网络精确营销，网络精准营销，微乐营销，微乐网络营销，微乐广告营销,微乐互联网营销，移动互联网精确营销，微乐币，乐币">
+	<meta name="description" content="微乐是一个基于智能手机运营的精确营销平台。为企业提供最专业的移动互联网精确营销服务。全国统一服务热线400-020-9898.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="format-detection" content="telphone=no">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<link rel="stylesheet" href="css/master.css">
+  	<link rel="icon" type="image/GIF" href="img/favicon.ico"/>
+  	<script src="pluging/jquery/dist/jquery-1.11.3.js"> </script>
+  	<script src="js/mobile.js"></script>
+</head>
+<body>
+	<div id="container">
+		<img class="convience" src="img/mobile/mobile_arrow.png" />
+		<div id="header">
+			<img src="img/mobile/kqw_m_header.jpg" width="100%" alt="">
+		</div>
+		<div id="content">
+			<div class="activity aContent">
+				<div class="cTop"><img src="img/mobile/kqw_m_content.jpg" width="100%" alt=""></div>
+				<div class="cContent">
+					<p>活动期间，全国微乐用户领取同城任意1张卡券可获得<strong>1点财富值</strong>;</p>
+					<p>成功使用同城任意1张优惠券可获得<strong>10点财富值</strong>;</p>
+					<p>成功充值使用同城任意一笔会员卡或代金券可获得<strong>20点财富值</strong>；</p>
+					<p>财富值总额<strong>排名前200</strong>的用户可获丰厚的奖励。</p>
+					<p>注：卡券指优惠券、代金券及会员卡。</p>
+					<p><strong>特别福利：中秋当天（9月27日）领取或成功使用卡券获得双倍财富值哦！</strong></p>
+				</div>
+			</div>
+			<div class="activity aLyTop">
+				<div class="aLyTopHead clearfix">
+					<em>乐友财富值TOP20:</em>
+					<a href="javascript:void(0);" id="lyBtn">刷新</a>
+				</div>
+				<div class="aLyTopContent">
+					<table class="dtable" id="lyDataTable">
+						<tr>
+								<td>名次</td><td>乐友</td><td>财富</td>
+								
+						</tr>
+					</table>					
+				</div>
+				<div class="aLySearch">
+					<p class="searchtitle">用户当前财富值查询:</p>
+					<p><span id="lyRank"></span></p>
+					<p class="searchinput">请输入手机号: <input type="text" id="lyId" min="10000"> <a href="javascript:void(0);" id="lySearch">查询</a> </p>
+					<p class="mark">备注：查询财富值需绑定手机号码，未绑定用户可登录微乐客户端个人中心完成绑定。</p>
+					<p class="loadtips tc">※数据1小时更新一次</p>
+				</div>
+			</div>
+			<div class="activity aAwards">
+				<div class="cTop"><img src="img/mobile/kqw_m_awards.jpg" width="100%" alt=""></div>
+				<div class="cContent">
+					<table class="dtable">
+						<tr>
+							<th>财富值排名</th>
+							<th>相应奖励</th>
+						</tr>
+						<tr>
+							<td>1-5名</td>
+							<td>800元</td>
+						</tr>
+						<tr>
+							<td>6-10名</td>
+							<td>500元</td>
+						</tr>
+						<tr>
+							<td>11-20名</td>
+							<td>200元</td>
+						</tr>
+						<tr>
+							<td>21-30名</td>
+							<td>100元</td>
+						</tr>
+						<tr>
+							<td>31-50名</td>
+							<td>80元</td>
+						</tr>
+						<tr>
+							<td>51-100名</td>
+							<td>50元</td>
+						</tr>
+						<tr>
+							<td>101-200名</td>
+							<td>20元</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="activity aTips">
+				<div class="cTop"><img src="img/mobile/kqw_m_tips.jpg" width="100%" alt=""></div>
+				<div class="cContent">
+					<p>（1）用户在活动期间领取或成功使用卡券获得财富值有效，超出活动时间则无效。</p>
+					<p>（2）用户超出同城范围领取或使用卡券则无法获得财富值；同城指手机登录所在地，如用户身在A地，领取或使用A地卡券可获得财富值；若用户身在A地，领取或使用B地卡券无法获得财富值。</p>
+					<p>（3）每个用户1天内在同一乐商处领取及成功使用卡券均不得超过3次，超出次数不计财富值。</p>
+					<p>（4）在财富值排名相同的情况下，以消费笔数多者排名为先；在财富值和消费笔数相同的情况下，以消费金额较多排名为先。</p>
+					<p>（5）活动结束后7个工作日内根据排名发放奖励，工作人员将相应奖励统一发放微乐现金账户(可提现)。</p>
+				</div>
+			</div>
+			<div class="activity aLsTop">
+				<h2>乐商也有奖励哦！</h3>
+				<p>活动期间，乐商在线交易笔数排名前20都可获得888元大奖！发放卡券越多，机会越大，在线交易次数越多，获奖越多，赶紧行动吧！</p>
+				<h3>— 乐商排名版展示区 —</h3>
+				<div class="aLyTopHead clearfix">
+					<em>最受欢迎乐商TPO20:</em>
+					<a href="javascript:void(0);" id="lsBtn">刷新</a>
+				</div>
+				<div class="aLyTopContent">
+					<table class="dtable" id="lsDataTable">
+						<tr><td>名次</td><td>乐商</td></tr>
+					</table>					
+				</div>
+				<p class="loadtips tc">※  数据1小时更新一次</p>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="copyright">
+				<a href="javascript:void(0);" class="top">返回顶部</a>
+				<p>本活动最终解释权归一定火网络科技有限公司所有</p>
+			</div>
+			<div class="">
+				<div class="jiathis_style_m">
+				</div>
+			</div>
+			<!-- <div class="share jiathis_style_m"></div> -->
+			<div class="footbg"><img src="img/mobile/kqw_m_footer.jpg" width="100%" alt=""></div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	var jiathis_config = {data_track_clickback:'true',title:"中秋国庆微乐带你玩转卡券,畅赢800元现金大奖！",pic:"http://172.16.9.30:3000/img/share.jpg",summary:""};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_m.js?uid=2061248" charset="utf-8"></script>
+</body>
+</html>

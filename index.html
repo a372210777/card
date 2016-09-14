@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta charset="utf-8"/>
+  <link rel="icon" type="image/GIF" href="img/favicon.ico"/>
+  <title>谁是卡券王</title>
+  <!-- 先引用框架css 再引用自定义css -->
+  <link rel="stylesheet" href="css/basic/normalize.css"/>
+  <script>
+  var  baseUrl="http://172.16.9.30:3000";
+  if (navigator.userAgent.indexOf("Mobile")>0) {
+      window.location.href=baseUrl+"/mobileIndex.html";
+  }
+  </script>
+  <script src="pluging/jquery/dist/jquery-1.11.3.js"> </script>  
+  <script src="js/index.js"> </script>
+  <style>
+    p{margin:0;}
+    .container{background-image: url("img/background.jpg");margin:0 auto;height:4276px;background-position: center;min-width: 1100px;max-width: 1920px}
+    .container .blank{height:900px;}
+    .container .triangle-wrap{text-align: center;}
+    .container .descrition-wrap{margin-left: 0 auto;margin-top: 16px;}
+    .container .descrition-wrap .flag{text-align: center;}
+    .container .descrition-wrap .descrition .content{   margin: 0 auto;width: 990px;background: #FFF;padding:28px 0 51px 153px;    box-sizing: border-box;}
+    .container .descrition-wrap .descrition .content p{margin-bottom: 10px}
+     
+
+    .container .rank-wrap .flag{text-align: center;height:89px;}
+    .container .rank-wrap .rank{height:569px;background:#FFF;width:990px;margin:0 auto; padding-top: 53px;}
+    .container .rank-wrap .rank .refrsh-wrap{text-align: center;  margin-bottom: 17px;}
+    .container .rank-wrap .rank .refrsh-wrap label{margin-right: 20px}
+/*    .container .rank-wrap .rank .refrsh-wrap .refresh{margin-left:360px;display:inline-block;width:92px;background:#FFBB80;font-weight: bold;font-size: 20px; padding: 5px 0;cursor: pointer;}*/    
+    .container .rank-wrap .rank .refrsh-wrap .refresh{margin-left:360px;display:inline-block;position: relative;;top:10px;cursor: pointer;}
+    .container .rank-wrap .rank .rank-table-wrap{}
+    .container .rank-wrap .rank .table-title{margin:0 auto;width:710px;}
+    .container .rank-wrap .rank .table-title span{ display: inline-block;border: 1px solid #807875;height: 36px;text-align: center;width: 146px; background: #c6c6c6;font-weight: bold}
+.container .rank-wrap .rank .table-title table{width:691px;border:1px solid #000;}
+.container .rank-wrap .rank .table-title table th{background:#c6c6c6;border:1px solid #807875;height:36px;text-align: center;}
+    .container .rank-wrap .rank .rank-table-wrap .table-wrap{height: 314px; width: 710px;margin: 0 auto;overflow-y: auto;overflow-x: hidden;}
+    .container .rank-wrap .rank .rank-table-wrap table{margin:0 auto;border:1px solid #000;width:691px;}
+    .container .rank-wrap .rank .rank-table-wrap table th{background:#c6c6c6;}
+    .container .rank-wrap .rank .rank-table-wrap table th{border:1px solid #807875;height:36px;text-align: center;}
+    .container .rank-wrap .rank .rank-table-wrap table td{border:1px solid #807875;height:36px;text-align: center;}
+
+    .container .rank-wrap .rank .result-wrap{ text-indent: 153px;margin-top: 15px;margin-bottom: 10px;}
+    .container .rank-wrap .rank .result-wrap .treasure{font-weight: bold;color:#6832A2;font-size:25px;}
+    .container .rank-wrap .rank .result-wrap .position{font-weight: bold;color:#6832A2;font-size:25px;}
+    .container .rank-wrap .rank .form-wrap{text-indent: 153px;}
+    .container .rank-wrap .rank .mark{padding:10px 0 5px 153px; color:gray;}
+
+   
+
+    .container .regulation .flag{text-align: center;height:89px;}
+    .container .regulation .award-wrap{text-align: center; height: 90px;}
+    .container .regulation .table-wrap{width:990px;margin:0 auto;background:#FFF;height:740px;box-sizing:border-box;padding:37px 0px 0px;}
+    .container .regulation .table-wrap table{border:1px solid #000;width:772px;margin:0 auto;}
+    .container .regulation .table-wrap table th{background:#c6c6c6;}
+    .container .regulation .table-wrap table th{border:1px solid #807875;height:36px;text-align: center;}
+    .container .regulation .table-wrap table td{border:1px solid #807875;height:36px;text-align: center;}
+    .container .regulation .table-wrap .tip-wrap{padding: 33px 103px 54px 154px}
+    .container .regulation .table-wrap .tip-wrap  p{margin-bottom: 14px}
+
+
+    .container .rank-shop-wrap .flag{text-align: center;height:89px;}
+    .container .rank-shop-wrap .explation{height: 192px; margin-top: -6px;}
+    .container .rank-shop-wrap .rank{height:480px;background:#FFF;width:990px;margin:0 auto;padding-top:29px; }
+    .container .rank-shop-wrap .rank .table-shop-title{margin:0 auto;width:710px;}
+    .container .rank-shop-wrap .rank .title{text-align: center;    text-align: center;-weight: BOLD;font-size: 29px; margin-bottom: 13px;}
+    .container .rank-shop-wrap .rank .sub-title{text-align: center}
+    .container .rank-shop-wrap .rank .sub-sub-title{text-align: center;margin-bottom: 41px;}
+    .container .rank-shop-wrap .rank .sub-sub-sub-title{text-align: center;margin-bottom: 32px;}
+    .container .rank-shop-wrap .rank .sub-sub-sub-title label{font-size: 20px;}
+    .container .rank-shop-wrap .rank .refrsh-wrap{text-align: center;  margin-bottom: 17px;}
+    .container .rank-shop-wrap .rank .refrsh-wrap label{margin-right: 20px}
+/*    .container .rank-shop-wrap .rank .refrsh-wrap .refresh{margin-left:325px;display:inline-block;width:92px;background:#FFBB80;font-weight: bold;font-size: 20px; padding: 5px 0;cursor: pointer;}*/
+    .container .rank-shop-wrap .rank .refrsh-wrap .refresh{margin-left:325px;display:inline-block;cursor:pointer;}
+    .container .rank-shop-wrap .rank .rank-leshang-table-wrap{}
+    .container .rank-shop-wrap .rank .rank-leshang-table-wrap .shop-table-wrap{margin: 0 auto; height: 310px; width: 710px;overflow-y: auto;overflow-x: hidden;}
+    .container .rank-shop-wrap .rank .rank-leshang-table-wrap table{margin:0 auto;border:1px solid #000;width:691px;}
+    .container .rank-shop-wrap .rank .rank-leshang-table-wrap table th{background:#c6c6c6;}
+    .container .rank-shop-wrap .rank .rank-leshang-table-wrap table th{border:1px solid #807875;height:36px;text-align: center;}
+    .container .rank-shop-wrap .rank .rank-leshang-table-wrap table td{border:1px solid #807875;height:36px;text-align: center;}
+
+    .container .go-top-wrap{text-align: center;padding:57px 0 36px;}
+    .container .go-top-wrap img{cursor: pointer;}
+    .container .explaination-wrap{text-align: center;}
+
+    .mt18{margin-top: 18px;}
+    .mt30{margin-top: 30px;}
+    .mr25{margin:0 25px 0 0;}
+    .mb18{margin-bottom:18px;}
+    .mb34{margin-bottom: 34px !important;}
+    .mb0{margin-bottom: 0 !important;}
+    .mc{margin:0 auto;}
+    .tc{text-align: center;}
+    .fc1{color:#FFF;}
+    .ti40{text-indent: 40px}
+    .fw{font-weight: bold;}
+    .fs20{font-size:20px;}
+    .h89{height:89px;}
+    .h88{height:88px;}
+    .cl{color:#FF00A7;}
+    .wt184{width:147px !important;}
+    .wt156{width:149px !important;}
+    .wt347{width:390 !important;}
+    .clear{clear: both;}
+
+    .disable{/*background:gray !important;*/}
+
+    .convience{position: fixed;right:0;top:100px;cursor:pointer;}
+
+    .table-common{float:left;text-align: center;padding:8px 0;}
+    .table-title .left{width: 132px;border: 1px solid #807875;background:#c6c6c6;font-weight:bold;}
+    .table-title .middle{width: 352px;border: 1px solid #807875;border-left: none;border-right:none; background:#c6c6c6;font-weight:bold;}
+    .table-title .right{width:201px;border: 1px solid #807875;background:#c6c6c6;font-weight:bold;}
+
+    .row .left{width: 132px;border: 1px solid #807875;border-top: none}
+    .row .middle{width: 352px;border: 1px solid #807875;border-left: none;border-right:none;border-top:none;}
+    .row .right{width:201px;border: 1px solid #807875;border-top:none;}
+
+    .table-shop-title .shop-left{width: 132px;border: 1px solid #807875;background:#c6c6c6;font-weight:bold;}
+    .table-shop-title .shop-right{width: 556px;border: 1px solid #807875;border-left: none;background:#c6c6c6;font-weight:bold;}
+
+    .shop-table-wrap .row .shop-left{width: 132px;border: 1px solid #807875;border-top: none}
+    .shop-table-wrap .row .shop-right{width: 556px;border: 1px solid #807875;border-left: none;border-top:none;}
+
+    .tomit{text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        <img class="convience" src="img/arrow.png" />
+        <div class="blank">
+        </div>
+        <div class="triangle-wrap">
+            <img src="img/kqw_triangle.png">
+        </div>
+        <div class="descrition-wrap"> 
+            <div class="flag h89">
+                <img src="img/kqw_01.jpg">
+            </div>
+            <div class="flag h88">
+                <img src="img/kqw_content.jpg">
+            </div>
+            <div class="descrition">
+                <div class="content">
+                  <p>活动期间，全国微乐用户领取同城任意1张卡券可获得<label class="cl">1 点财富值，</label></p>
+                  <p>成功使用同城任意1张优惠券可获得<label class="cl">10点财富值，</label>  </p>
+                  <p>成功充值使用同城任意一笔会员卡或代金券可获得<label class="cl">20点财富值；</label>  </p>
+                  <p>财富值总额<label class="cl">排名前200</label>的用户可获丰厚的奖励。  </p>
+                  <p class="mb34">注：卡券指优惠券、代金券及会员卡。  </p>
+
+                  <p class="cl">特别福利：中秋当天（9月27日）领取或成功使用卡券获得双倍财富值哦！  </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="triangle-wrap mt18 mb18">
+            <img src="img/kqw_triangle.png">
+        </div>
+        <div class="rank-wrap"> 
+            <div class="flag">
+                <img src="img/kqw_04.jpg">
+            </div>
+            <div class="rank">
+
+              <div class="refrsh-wrap">
+                <label class="fw fs20">乐友财富TOP20:</label>
+                <!-- <label class="refresh disable" id="refhresh" >刷新</label> -->
+                <img class="refresh" id="refresh" src="img/refresh_03.png">
+              </div>
+               <div>
+                  <div class="table-title">
+                    <div class="table-common left">名次</div>
+                    <div class=" table-common middle">乐友</div>
+                    <div class="table-common right">财富</div>
+                  </div>
+              </div> 
+              <div class="rank-table-wrap">
+                <div class="table-wrap ly-table" id="friendTable">
+                    <!-- <div class="row">
+                      <div class="table-common left" style="">第1名</div>
+                      <div class=" table-common middle" style="">136*****174</div>
+                      <div class="table-common right" style="">10000</div>
+                    </div>
+                    <div class="row">
+                      <div class="table-common left" style="">第1名</div>
+                      <div class=" table-common middle" style="">136*****174</div>
+                      <div class="table-common right" style="">10000</div>
+                    </div>
+                    <div class="row">
+                      <div class="table-common left" style="">第1名</div>
+                      <div class=" table-common middle" style="">136*****174</div>
+                      <div class="table-common right" style="">10000</div>
+                    </div>
+ -->
+                <!-- <table id="friendTable">
+                  <tr >
+                    <th>名次</th>
+                    <th>乐友</th>
+                    <th>财富值</th>
+                  </tr> 
+                </table> -->
+              </div>
+              </div>
+              <div class="result-wrap" >用户当前财富查询：<span id="resultWrap"></span></div>
+              <div class="form-wrap">
+                <form id="friend-form">
+                  <label>请输入手机号:</label>
+                  <input type="text"  placeholder="请输入手机号" />
+                  <input type="submit" value="查询" />
+                </form>
+               </div>
+              <div class="mark">备注：查询财富值需绑定手机号码，未绑定用户可登录微乐客户端个人中心完成绑定。</div>
+              <div class="">
+                  <p class="mc tc">
+                      ※数据1小时更新一次
+                  </p>
+              </div>
+            </div>
+        </div>
+        <div class="triangle-wrap mt18 mb18">
+            <img src="img/kqw_triangle.png">
+        </div>
+        <div class="regulation">
+             <div class="flag">
+                <img src="img/kqw_01.jpg">
+            </div>
+             <div class="award-wrap">
+                <img src="img/img_awards.jpg">
+            </div>
+            <div class="table-wrap">
+
+                <table>
+                  <tr>
+                    <th>财富值排名</th>
+                    <th>相应奖励</th>
+                  </tr>
+                  <tr>
+                    <td>1-5名</td>
+                    <td>800元</td>
+                  </tr>
+                  <tr>
+                    <td>6-10名</td>
+                    <td>500元</td>
+                  </tr>
+                  <tr>
+                    <td>11-20名</td>
+                    <td>200元</td>
+                  </tr>
+                  <tr>
+                    <td>21-30名</td>
+                    <td>100元</td>
+                  </tr>
+                  <tr>
+                    <td>31-50名</td>
+                    <td>80元</td>
+                  </tr>
+                  <tr>
+                    <td>51-100名</td>
+                    <td>50元</td>
+                  </tr>
+                  <tr>
+                    <td>101-200名</td>
+                    <td>20元</td>
+                  </tr>
+
+                </table>
+                <div class="award-wrap">
+                  <img src="img/img_tips.jpg">
+                </div>
+                <div class="tip-wrap">
+                  <p >（1）用户在活动期间内领取或成功使用卡券获得财富值有效，超出活动时间则无效。</p>
+                  <p class="mb0">（2）用户超出同城范围领取或使用卡券则无法获得财富值；同城指手机登录所在地，如用户身在A</p>
+                  <p class="ti40">地，领取或使用A地卡券可获得财富值； 若用户身在A地，领取或使用B地卡券无法获得财富值。</p>
+                  <p>（3）每个用户1天内在同一乐商处领取及成功使用卡券均不得超过3次，超出次数不计财富值。</p>
+                  <p class="mb0">（4）在财富值排名相同的情况下，以消费笔数多者排名为先；
+          在财富值和消费笔数相同的情况下，</p>
+                  <p class="ti40">以消费金额较多排名为先。</p>
+                  <p>（5）活动结束后7个工作日内根据排名发放奖励，工作人员将相应奖励统一发放微乐现金账户(可提现)。</p>
+                </div>
+            </div>
+          
+        </div>
+        <div class="triangle-wrap mt18 mb18">
+            <img src="img/kqw_triangle.png">
+        </div>
+        <div class="rank-shop-wrap"> 
+            <div class="flag">
+                <img src="img/kqw_04.jpg">
+            </div>
+            <div class="flag explation">
+                <img src="img/shop_rank.png">
+            </div>
+
+            <div class="rank">
+              <!-- <div class="title fw">
+                  乐商也有奖励哦
+              </div>
+              <div class="sub-title">
+                  活动期间，乐商在线交易笔数排名前20都可获得888元大奖！
+              </div>
+              <div class="sub-sub-title">
+                 发放卡券越多，机会越大，在线交易次数越多，获奖越多，赶紧行动吧！
+              </div>
+              <div class="sub-sub-sub-title">
+                <!--  ———————————————&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>乐商排名展示区</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——————————————— -->
+                  <!-- ———————————————————————————————————————————— -->
+              <!-- </div>  -->
+              <div class="refrsh-wrap">
+                <label class="fw fs20">最受欢迎的乐商TOP20:</label>
+                <!-- <label class="refresh disable" id="refhreshLeS">刷新</label> -->
+                <img class="refresh" id="refreshLeS" src="img/refresh_03.png">
+              </div>
+
+              <div>
+                  <div class="table-shop-title">
+                    <div class="table-common shop-left">名次</div>
+                    <div class=" table-common shop-right">乐商</div>
+                  </div>
+              </div> 
+
+              <div class="rank-leshang-table-wrap">
+                  <div class="shop-table-wrap ls-table" id="shopTable">
+                      
+                     
+                   <!--  <table id="shopTable">
+                      <tr>
+                        <th>名次</th>
+                        <th>乐商</th>
+                      </tr> 
+                    </table> -->
+                </div>
+              </div>
+              <div class="clear"></div>
+              <div class="tc">
+                ※数据1小时更新一次
+              </div>
+            </div>
+        </div>
+         <div class="go-top-wrap">
+            <!-- <img id="goTop" src="img/kqw_top.png"> -->
+        </div>
+         <div class="explaination-wrap fc1">
+           本活动最终解释权归一定火网络科技有限公司所有
+        </div>
+    </div>
+  
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true',title:"中秋国庆微乐带你玩转卡券,畅赢800元现金大奖！",pic:"http://172.16.9.30:3000/img/share.jpg",summary:""};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?move=0&amp;uid=2061248" charset="utf-8"></script>
+</body>
+
+</html>
